@@ -21,7 +21,7 @@ classifiers = [s.strip() for s in classes.split('\n') if s]
 
 setup(
     name='tux-control',
-    version='0.0.1',
+    version='0.0.2',
     description='Tux Control Chromium kiosk plugin',
     long_description=open('README.md').read(),
     author='Adam Schubert',
