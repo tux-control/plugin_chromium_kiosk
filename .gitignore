@@ -1,6 +1,5 @@
 .idea
 *.pyc
-/config.py
 /build
 /dist/
 /venv

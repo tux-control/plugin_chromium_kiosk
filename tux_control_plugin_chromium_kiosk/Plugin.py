@@ -1,4 +1,3 @@
-import flask
 from yaml import load, SafeLoader, dump
 from typing import List
 from tux_control.plugin.IPlugin import IPlugin
