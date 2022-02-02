@@ -20,7 +20,7 @@ classifiers = [s.strip() for s in classes.split('\n') if s]
 
 
 setup(
-    name='tux-control',
+    name='tux-control-plugin-chromium-kiosk',
     version='0.0.2',
     description='Tux Control Chromium kiosk plugin',
     long_description=open('README.md').read(),
