@@ -32,7 +32,7 @@ setup(
     packages=find_packages(exclude=['tests', 'tests.*']),
     install_requires=[
         'pyyaml',
-        'tux_control'
+        'tux-control'
     ],
     test_suite="tests",
     tests_require=[],
