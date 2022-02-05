@@ -13,7 +13,7 @@ from tux_control.plugin.controls.Number import Number
 from tux_control.plugin.controls.MultiSelect import MultiSelect
 from tux_control.plugin.controls.Chips import Chips
 from tux_control.plugin.exceptions import SetException
-from tux_control.plugin.SystemUser import SystemUser
+from tux_control.plugin.CurrentUser import CurrentUser
 
 from tux_control.plugin.validators.RequiredValidator import RequiredValidator
 from tux_control.plugin.validators.UrlValidator import UrlValidator
@@ -50,7 +50,7 @@ class Plugin(IPlugin):
 
     @property
     def is_active(self) -> bool:
-        if not SystemUser.has_permission('chromium_kiosk.access'):
+        if not CurrentUser.has_permission('chromium_kiosk.access'):
             return False
 
         try:
