@@ -12,8 +12,7 @@ class PluginConfigItem(IPluginConfigItem):
 
     def __init__(self,
                  name: str,
-                 clean_start: bool,
-                 kiosk: bool,
+                 full_screen: bool,
                  touchscreen: bool,
                  home_page: bool,
                  idle_time: int,
@@ -34,8 +33,7 @@ class PluginConfigItem(IPluginConfigItem):
                  plugin_config_options: List[PluginConfigOption]
                  ):
         self.name = name
-        self.clean_start = clean_start
-        self.kiosk = kiosk
+        self.full_screen = full_screen
         self.touchscreen = touchscreen
         self.home_page = home_page
         self.idle_time = idle_time
@@ -59,8 +57,7 @@ class PluginConfigItem(IPluginConfigItem):
     def from_chromium_kiosk_config(chromium_kiosk_config: dict, plugin_config_options: List[PluginConfigOption]) -> 'PluginConfigItem':
         return PluginConfigItem(
             name='Main config',
-            clean_start=chromium_kiosk_config.get('CLEAN_START', True),
-            kiosk=chromium_kiosk_config.get('KIOSK', True),
+            full_screen=chromium_kiosk_config.get('FULL_SCREEN', True),
             touchscreen=chromium_kiosk_config.get('TOUCHSCREEN', True),
             home_page=chromium_kiosk_config.get('HOME_PAGE', 'https://salamek.cz'),
             idle_time=chromium_kiosk_config.get('IDLE_TIME', 0),
@@ -95,8 +92,7 @@ class PluginConfigItem(IPluginConfigItem):
 
     def to_chromium_kiosk_config(self) -> dict:
         return {
-            'CLEAN_START': self.clean_start,
-            'KIOSK': self.kiosk,
+            'FULL_SCREEN': self.full_screen,
             'TOUCHSCREEN': self.touchscreen,
             'HOME_PAGE': self.home_page,
             'IDLE_TIME': self.idle_time,
@@ -131,8 +127,7 @@ class PluginConfigItem(IPluginConfigItem):
             'is_deletable': self.is_deletable,
             'is_editable': self.is_editable,
             'plugin_config_options': self.plugin_config_options,
-            'clean_start': self.clean_start,
-            'kiosk': self.kiosk,
+            'full_screen': self.full_screen,
             'touchscreen': self.touchscreen,
             'home_page': self.home_page,
             'idle_time': self.idle_time,

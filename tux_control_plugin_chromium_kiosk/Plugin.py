@@ -97,20 +97,9 @@ class Plugin(IPlugin):
     def plugin_config_options(self) -> List[PluginConfigOption]:
         return [
             PluginConfigOption(
-                'clean_start',
-                'Clean start of kiosk on each boot',
-                'Force chromium to clean start on each boot (That simply means do not show "Restore pages" dialog, you want this to be true in 99% of use cases)',
-                Select([
-                    {'label': 'Yes', 'value': True},
-                    {'label': 'No', 'value': False},
-                ]),
-                [RequiredValidator()],
-                default_value=True,
-            ),
-            PluginConfigOption(
-                'kiosk',
-                'Kiosk mode',
-                'Run in kiosk mode, chromium will use whole screen without any way for user to close it, setting this to false is useful for web application debug (you can access chromium Inspect tool and so on) and initial chromium configuration',
+                'full_screen',
+                'Full screen mode',
+                'Run in full screen mode, browser will use whole screen without any way for user to close it',
                 Select([
                     {'label': 'Yes', 'value': True},
                     {'label': 'No', 'value': False},
