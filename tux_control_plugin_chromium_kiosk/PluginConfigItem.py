@@ -37,10 +37,6 @@ class PluginConfigItem(IPluginConfigItem):
 
             virtual_keyboard_enabled=chromium_kiosk_config.get('VIRTUAL_KEYBOARD', {}).get('ENABLED', False),
 
-            screen_saver_enabled=chromium_kiosk_config.get('SCREEN_SAVER', {}).get('ENABLED', False),
-            screen_saver_idle_time=chromium_kiosk_config.get('SCREEN_SAVER', {}).get('IDLE_TIME', False),
-            screen_saver_text=chromium_kiosk_config.get('SCREEN_SAVER', {}).get('TEXT', False),
-
             screen_rotation=chromium_kiosk_config.get('SCREEN_ROTATION', 'normal'),
             touchscreen_rotation=chromium_kiosk_config.get('TOUCHSCREEN_ROTATION', 'normal')
         )
@@ -90,11 +86,6 @@ class PluginConfigItem(IPluginConfigItem):
             },
             'VIRTUAL_KEYBOARD': {
                 'ENABLED': data.get('virtual_keyboard_enabled')
-            },
-            'SCREEN_SAVER': {
-                'ENABLED': data.get('screen_saver_enabled'),
-                'IDLE_TIME': data.get('screen_saver_idle_time'),
-                'TEXT': data.get('screen_saver_text'),
             },
             'SCREEN_ROTATION': data.get('screen_rotation'),
             'TOUCHSCREEN_ROTATION': data.get('touchscreen_rotation'),
