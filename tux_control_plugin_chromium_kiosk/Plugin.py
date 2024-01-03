@@ -1,3 +1,4 @@
+import logging
 from yaml import load, SafeLoader, dump
 from typing import List
 from tux_control.plugin.IPlugin import IPlugin
@@ -57,6 +58,7 @@ class Plugin(IPlugin):
             import chromium_kiosk
             return True
         except ImportError:
+            logging.warning("chromium_kiosk install was not found plugin will be disabled.")
             return False
 
     @property
